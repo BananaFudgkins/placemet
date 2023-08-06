@@ -13,6 +13,7 @@
 		00A0F7D22A8037B600B7A16A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A0F7D12A8037B600B7A16A /* Preview Assets.xcassets */; };
 		00A0F7D42A8037B600B7A16A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0F7D32A8037B600B7A16A /* Persistence.swift */; };
 		00A0F7D72A8037B600B7A16A /* Placemet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00A0F7D52A8037B600B7A16A /* Placemet.xcdatamodeld */; };
+		00A0F7DF2A803ADA00B7A16A /* CardStack in Frameworks */ = {isa = PBXBuildFile; productRef = 00A0F7DE2A803ADA00B7A16A /* CardStack */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00A0F7DF2A803ADA00B7A16A /* CardStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +91,9 @@
 			dependencies = (
 			);
 			name = Placemet;
+			packageProductDependencies = (
+				00A0F7DE2A803ADA00B7A16A /* CardStack */,
+			);
 			productName = Placemet;
 			productReference = 00A0F7C72A8037B400B7A16A /* Placemet.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +122,9 @@
 				Base,
 			);
 			mainGroup = 00A0F7BE2A8037B400B7A16A;
+			packageReferences = (
+				00A0F7DD2A803ADA00B7A16A /* XCRemoteSwiftPackageReference "SwiftUI-CardStackView" */,
+			);
 			productRefGroup = 00A0F7C82A8037B400B7A16A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -347,6 +355,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		00A0F7DD2A803ADA00B7A16A /* XCRemoteSwiftPackageReference "SwiftUI-CardStackView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dadalar/SwiftUI-CardStackView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		00A0F7DE2A803ADA00B7A16A /* CardStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00A0F7DD2A803ADA00B7A16A /* XCRemoteSwiftPackageReference "SwiftUI-CardStackView" */;
+			productName = CardStack;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		00A0F7D52A8037B600B7A16A /* Placemet.xcdatamodeld */ = {
