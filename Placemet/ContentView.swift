@@ -7,9 +7,12 @@
 
 import SwiftUI
 import CoreData
+import CardStack
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    
+    @State var businesses = [Business]()
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
@@ -18,27 +21,13 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+            CardStack(direction: LeftRight.direction, data: businesses) { card, direction in
+                print("Hey")
+            } content: { card, direction, isOnTop in
+                VStack {
+                    Text("Hey")
                 }
             }
-            Text("Select an item")
         }
     }
 

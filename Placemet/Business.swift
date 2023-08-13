@@ -12,7 +12,7 @@ struct Coordinates: Codable {
     let longitude: Double
 }
 
-struct Business {
+struct Business: Identifiable {
     var id: String?
     var name: String?
     var rating: Float?
