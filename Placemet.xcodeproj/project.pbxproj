@@ -11,6 +11,7 @@
 		001E3C8A2A886D7E004AD5DE /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3C892A886D7E004AD5DE /* Business.swift */; };
 		001E3C8C2A886DCB004AD5DE /* YLPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3C8B2A886DCB004AD5DE /* YLPClient.swift */; };
 		001E3C8E2A887891004AD5DE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3C8D2A887891004AD5DE /* CardView.swift */; };
+		001E3C952A89B57F004AD5DE /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 001E3C942A89B57F004AD5DE /* SDWebImageSwiftUI */; };
 		00A0F7CB2A8037B400B7A16A /* PlacemetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0F7CA2A8037B400B7A16A /* PlacemetApp.swift */; };
 		00A0F7CD2A8037B400B7A16A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0F7CC2A8037B400B7A16A /* ContentView.swift */; };
 		00A0F7CF2A8037B600B7A16A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A0F7CE2A8037B600B7A16A /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				001E3C952A89B57F004AD5DE /* SDWebImageSwiftUI in Frameworks */,
 				00A0F7DF2A803ADA00B7A16A /* CardStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +107,7 @@
 			name = Placemet;
 			packageProductDependencies = (
 				00A0F7DE2A803ADA00B7A16A /* CardStack */,
+				001E3C942A89B57F004AD5DE /* SDWebImageSwiftUI */,
 			);
 			productName = Placemet;
 			productReference = 00A0F7C72A8037B400B7A16A /* Placemet.app */;
@@ -136,6 +139,7 @@
 			mainGroup = 00A0F7BE2A8037B400B7A16A;
 			packageReferences = (
 				00A0F7DD2A803ADA00B7A16A /* XCRemoteSwiftPackageReference "SwiftUI-CardStackView" */,
+				001E3C932A89B57F004AD5DE /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 00A0F7C82A8037B400B7A16A /* Products */;
 			projectDirPath = "";
@@ -373,6 +377,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		001E3C932A89B57F004AD5DE /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		00A0F7DD2A803ADA00B7A16A /* XCRemoteSwiftPackageReference "SwiftUI-CardStackView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dadalar/SwiftUI-CardStackView.git";
@@ -384,6 +396,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		001E3C942A89B57F004AD5DE /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 001E3C932A89B57F004AD5DE /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
 		00A0F7DE2A803ADA00B7A16A /* CardStack */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 00A0F7DD2A803ADA00B7A16A /* XCRemoteSwiftPackageReference "SwiftUI-CardStackView" */;
