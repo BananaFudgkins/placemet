@@ -33,7 +33,7 @@ struct CardView: View {
                     }
                     Spacer()
                     if let distance = business.distance {
-                        Text("\(distance) meters away")
+                        Text("\(round(distance * 10) / 10) meters away")
                             .font(.footnote)
                             .foregroundColor(.secondary)
                     }
