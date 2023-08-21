@@ -12,6 +12,7 @@
 		001E3C8C2A886DCB004AD5DE /* YLPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3C8B2A886DCB004AD5DE /* YLPClient.swift */; };
 		001E3C8E2A887891004AD5DE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3C8D2A887891004AD5DE /* CardView.swift */; };
 		001E3C952A89B57F004AD5DE /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 001E3C942A89B57F004AD5DE /* SDWebImageSwiftUI */; };
+		001E3C972A92F8F8004AD5DE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3C962A92F8F8004AD5DE /* LocationManager.swift */; };
 		00A0F7CB2A8037B400B7A16A /* PlacemetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0F7CA2A8037B400B7A16A /* PlacemetApp.swift */; };
 		00A0F7CD2A8037B400B7A16A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0F7CC2A8037B400B7A16A /* ContentView.swift */; };
 		00A0F7CF2A8037B600B7A16A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A0F7CE2A8037B600B7A16A /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		001E3C892A886D7E004AD5DE /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		001E3C8B2A886DCB004AD5DE /* YLPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLPClient.swift; sourceTree = "<group>"; };
 		001E3C8D2A887891004AD5DE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		001E3C962A92F8F8004AD5DE /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		00A0F7C72A8037B400B7A16A /* Placemet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Placemet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A0F7CA2A8037B400B7A16A /* PlacemetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemetApp.swift; sourceTree = "<group>"; };
 		00A0F7CC2A8037B400B7A16A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				001E3C892A886D7E004AD5DE /* Business.swift */,
 				001E3C8B2A886DCB004AD5DE /* YLPClient.swift */,
 				001E3C8D2A887891004AD5DE /* CardView.swift */,
+				001E3C962A92F8F8004AD5DE /* LocationManager.swift */,
 			);
 			path = Placemet;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				00A0F7CD2A8037B400B7A16A /* ContentView.swift in Sources */,
 				001E3C8E2A887891004AD5DE /* CardView.swift in Sources */,
 				00A0F7CB2A8037B400B7A16A /* PlacemetApp.swift in Sources */,
+				001E3C972A92F8F8004AD5DE /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +310,7 @@
 				DEVELOPMENT_TEAM = 85Q84CPFAN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "PlaceMet uses your location to find places near you where you can meet people.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -335,6 +340,7 @@
 				DEVELOPMENT_TEAM = 85Q84CPFAN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "PlaceMet uses your location to find places near you where you can meet people.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
