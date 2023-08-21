@@ -24,7 +24,7 @@ struct CardView: View {
                     Image(systemName: "photo")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(height: geo.size.width)
+                        .frame(width: geo.size.width - (15 * 2), height: geo.size.width)
                         .clipped()
                 }
                 HStack {
