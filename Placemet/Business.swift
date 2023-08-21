@@ -20,4 +20,5 @@ struct Business: Identifiable {
     var is_closed: Bool?
     var distance: Double?
     var address: String?
+    var image_url: URL?
 }

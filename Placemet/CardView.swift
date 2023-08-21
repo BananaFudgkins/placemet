@@ -14,12 +14,20 @@ struct CardView: View {
     var body: some View {
         GeometryReader { geo in
             VStack {
-                Image(systemName: "photo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(height: geo.size.width)
-                    .clipped()
-                    .padding()
+                if let image_url = business.image_url {
+                    WebImage(url: image_url)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(height: geo.size.width)
+                        .clipped()
+                } else {
+                    Image(systemName: "photo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(height: geo.size.width)
+                        .clipped()
+                        .padding()
+                }
                 HStack {
                     if let name = business.name {
                         Text(name)
@@ -36,12 +44,13 @@ struct CardView: View {
             .background(Color(uiColor: .systemBackground))
             .cornerRadius(12)
             .shadow(radius: 4)
+            .padding(.horizontal, 15)
         }
     }
 }
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(business: Business(name: "Fun Town", distance: 420))
+        CardView(business: Business(name: "The Pink Door", distance: 420, image_url: URL(string: "https://s3-media3.fl.yelpcdn.com/bphoto/CoY9bQZtxt_1PEV_DgQWIg/o.jpg")))
     }
 }

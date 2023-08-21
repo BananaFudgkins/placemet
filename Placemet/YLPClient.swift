@@ -45,6 +45,11 @@ class YLPClient: ObservableObject {
                     biz.is_closed = business.value(forKey: "is_closed") as? Bool
                     biz.distance = business.value(forKey: "distance") as? Double
                     
+                    let url = business.value(forKey: "image_url") as? String
+                    if let url = url {
+                        biz.image_url = URL(string: url)
+                    }
+                    
                     let address = business.value(forKey: "location.display_address") as? [String]
                     biz.address = address?.joined(separator: "\n")
                     

@@ -23,12 +23,12 @@ struct ContentView: View {
         NavigationView {
             CardStack(direction: LeftRight.direction, data: businesses) { card, direction in
                 print("Hey")
-            } content: { card, direction, isOnTop in
-                VStack {
-                    Text("Hey")
-                }
+            } content: { business, _, _ in
+                CardView(business: business)
             }
         }
+        .navigationBarTitleDisplayMode(.large)
+        .navigationTitle(Text("PlaceMet"))
     }
 
     private func addItem() {
