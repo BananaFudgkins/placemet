@@ -9,7 +9,7 @@ import Foundation
 
 class YLPClient: ObservableObject {
     func searchForBusinesses(coordinates: Coordinates, completion: @escaping ([Business]?, Error?) -> Void) {
-        let requestURL = "https://api.yelp.com/v3/businesses/search?latitude=\(coordinates.latitude)&longitude=\(coordinates.longitude)"
+        let requestURL = "https://api.yelp.com/v3/businesses/search?latitude=\(coordinates.latitude)&longitude=\(coordinates.longitude)&sort_by=distance"
         
         guard let url = URL(string: requestURL) else {
             print("Invalid URL")
