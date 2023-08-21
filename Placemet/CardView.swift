@@ -18,7 +18,7 @@ struct CardView: View {
                     WebImage(url: image_url)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(height: geo.size.width)
+                        .frame(width: geo.size.width - (15 * 2), height: geo.size.width)
                         .clipped()
                 } else {
                     Image(systemName: "photo")
