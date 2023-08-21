@@ -26,7 +26,6 @@ struct CardView: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(height: geo.size.width)
                         .clipped()
-                        .padding()
                 }
                 HStack {
                     if let name = business.name {
