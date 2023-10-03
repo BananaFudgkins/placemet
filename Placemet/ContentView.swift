@@ -44,22 +44,31 @@ struct ContentView: View {
         }
         .onAppear(perform: {
             if locManager.locationManager.authorizationStatus == .authorizedWhenInUse {
-                guard let userLoc = locManager.locationManager.location else { return }
-                
-                YLPClient().searchForBusinesses(coordinates: Coordinates(latitude: userLoc.coordinate.latitude, longitude: userLoc.coordinate.longitude)) { bizes, error in
-                    if let error = error {
-                        print("Error fetching businesses: \(error.localizedDescription)")
-                        return
-                    }
-                    
-                    guard let bizes = bizes else { return }
-                    
-                    businesses = bizes
-                }
+                fetchBusinesses()
+            }
+        })
+        .onChange(of: locManager.authorizationStatus, perform: { value in
+            if value == .authorizedWhenInUse {
+                fetchBusinesses()
             }
         })
         .navigationBarTitleDisplayMode(.large)
         .navigationTitle(Text("PlaceMet"))
+    }
+    
+    private func fetchBusinesses() {
+        guard let userLoc = locManager.locationManager.location else { return }
+        
+        YLPClient().searchForBusinesses(coordinates: Coordinates(latitude: userLoc.coordinate.latitude, longitude: userLoc.coordinate.longitude)) { bizes, error in
+            if let error = error {
+                print("Error fetching businesses: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let bizes = bizes else { return }
+            
+            businesses = bizes
+        }
     }
 
     private func addItem() {

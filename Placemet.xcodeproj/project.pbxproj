@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		001E3C882A886D0E004AD5DE /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3C872A886D0E004AD5DE /* Secrets.swift */; };
+		00100BF32ACBC85000DFB07D /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00100BF22ACBC85000DFB07D /* Secrets.swift */; };
 		001E3C8A2A886D7E004AD5DE /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3C892A886D7E004AD5DE /* Business.swift */; };
 		001E3C8C2A886DCB004AD5DE /* YLPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3C8B2A886DCB004AD5DE /* YLPClient.swift */; };
 		001E3C8E2A887891004AD5DE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3C8D2A887891004AD5DE /* CardView.swift */; };
@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		001E3C872A886D0E004AD5DE /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		00100BF22ACBC85000DFB07D /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		001E3C892A886D7E004AD5DE /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		001E3C8B2A886DCB004AD5DE /* YLPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLPClient.swift; sourceTree = "<group>"; };
 		001E3C8D2A887891004AD5DE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -75,11 +75,11 @@
 				00A0F7D32A8037B600B7A16A /* Persistence.swift */,
 				00A0F7D52A8037B600B7A16A /* Placemet.xcdatamodeld */,
 				00A0F7D02A8037B600B7A16A /* Preview Content */,
-				001E3C872A886D0E004AD5DE /* Secrets.swift */,
 				001E3C892A886D7E004AD5DE /* Business.swift */,
 				001E3C8B2A886DCB004AD5DE /* YLPClient.swift */,
 				001E3C8D2A887891004AD5DE /* CardView.swift */,
 				001E3C962A92F8F8004AD5DE /* LocationManager.swift */,
+				00100BF22ACBC85000DFB07D /* Secrets.swift */,
 			);
 			path = Placemet;
 			sourceTree = "<group>";
@@ -171,8 +171,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				001E3C8C2A886DCB004AD5DE /* YLPClient.swift in Sources */,
+				00100BF32ACBC85000DFB07D /* Secrets.swift in Sources */,
 				00A0F7D72A8037B600B7A16A /* Placemet.xcdatamodeld in Sources */,
-				001E3C882A886D0E004AD5DE /* Secrets.swift in Sources */,
 				00A0F7D42A8037B600B7A16A /* Persistence.swift in Sources */,
 				001E3C8A2A886D7E004AD5DE /* Business.swift in Sources */,
 				00A0F7CD2A8037B400B7A16A /* ContentView.swift in Sources */,
