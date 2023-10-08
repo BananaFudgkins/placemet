@@ -7,13 +7,9 @@
 
 import SwiftUI
 import CoreData
-import CardStack
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    
-    @State var businesses = [Business]()
-    @StateObject var locManager = LocationManager()
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
@@ -21,53 +17,15 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
 
     var body: some View {
-        NavigationView {
-            switch locManager.locationManager.authorizationStatus {
-            case .authorizedWhenInUse:
-                CardStack(direction: LeftRight.direction, data: businesses) { card, direction in
-                    print("Swiped \(direction).")
-                } content: { business, _, _ in
-                    CardView(business: business)
+        TabView {
+            PlacesView()
+                .tabItem {
+                    Label("Places", systemImage: "rectangle.stack")
                 }
-            case .restricted, .denied:
-                Text("Location permissions are restricted or were denied.")
-            case .notDetermined:
-                VStack {
-                    Text("Asking for location permissions...")
-                    ProgressView()
+            SettingsView()
+                .tabItem {
+                    Label("Settings", systemImage: "gear")
                 }
-            case .authorizedAlways:
-                Text("Thanks for authorizing us to always use your location!")
-            @unknown default:
-                ProgressView()
-            }
-        }
-        .onAppear(perform: {
-            if locManager.locationManager.authorizationStatus == .authorizedWhenInUse {
-                fetchBusinesses()
-            }
-        })
-        .onChange(of: locManager.authorizationStatus, perform: { value in
-            if value == .authorizedWhenInUse {
-                fetchBusinesses()
-            }
-        })
-        .navigationBarTitleDisplayMode(.large)
-        .navigationTitle(Text("PlaceMet"))
-    }
-    
-    private func fetchBusinesses() {
-        guard let userLoc = locManager.locationManager.location else { return }
-        
-        YLPClient().searchForBusinesses(coordinates: Coordinates(latitude: userLoc.coordinate.latitude, longitude: userLoc.coordinate.longitude)) { bizes, error in
-            if let error = error {
-                print("Error fetching businesses: \(error.localizedDescription)")
-                return
-            }
-            
-            guard let bizes = bizes else { return }
-            
-            businesses = bizes
         }
     }
 

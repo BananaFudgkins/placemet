@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		00100BF32ACBC85000DFB07D /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00100BF22ACBC85000DFB07D /* Secrets.swift */; };
+		00151D5B2AD3542B00FF67A4 /* PlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00151D5A2AD3542B00FF67A4 /* PlacesView.swift */; };
+		00151D5D2AD3568400FF67A4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00151D5C2AD3568400FF67A4 /* SettingsView.swift */; };
 		001E3C8A2A886D7E004AD5DE /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3C892A886D7E004AD5DE /* Business.swift */; };
 		001E3C8C2A886DCB004AD5DE /* YLPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3C8B2A886DCB004AD5DE /* YLPClient.swift */; };
 		001E3C8E2A887891004AD5DE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3C8D2A887891004AD5DE /* CardView.swift */; };
@@ -24,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		00100BF22ACBC85000DFB07D /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		00151D5A2AD3542B00FF67A4 /* PlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesView.swift; sourceTree = "<group>"; };
+		00151D5C2AD3568400FF67A4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		001E3C892A886D7E004AD5DE /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		001E3C8B2A886DCB004AD5DE /* YLPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLPClient.swift; sourceTree = "<group>"; };
 		001E3C8D2A887891004AD5DE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 			children = (
 				00A0F7CA2A8037B400B7A16A /* PlacemetApp.swift */,
 				00A0F7CC2A8037B400B7A16A /* ContentView.swift */,
+				00151D5A2AD3542B00FF67A4 /* PlacesView.swift */,
+				00151D5C2AD3568400FF67A4 /* SettingsView.swift */,
 				00A0F7CE2A8037B600B7A16A /* Assets.xcassets */,
 				00A0F7D32A8037B600B7A16A /* Persistence.swift */,
 				00A0F7D52A8037B600B7A16A /* Placemet.xcdatamodeld */,
@@ -176,9 +182,11 @@
 				00A0F7D42A8037B600B7A16A /* Persistence.swift in Sources */,
 				001E3C8A2A886D7E004AD5DE /* Business.swift in Sources */,
 				00A0F7CD2A8037B400B7A16A /* ContentView.swift in Sources */,
+				00151D5B2AD3542B00FF67A4 /* PlacesView.swift in Sources */,
 				001E3C8E2A887891004AD5DE /* CardView.swift in Sources */,
 				00A0F7CB2A8037B400B7A16A /* PlacemetApp.swift in Sources */,
 				001E3C972A92F8F8004AD5DE /* LocationManager.swift in Sources */,
+				00151D5D2AD3568400FF67A4 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
