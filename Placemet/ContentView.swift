@@ -18,14 +18,22 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
-            PlacesView()
-                .tabItem {
-                    Label("Places", systemImage: "rectangle.stack")
-                }
-            SettingsView()
-                .tabItem {
-                    Label("Settings", systemImage: "gear")
-                }
+            NavigationView {
+                PlacesView()
+                    .navigationTitle("Places")
+                    .navigationBarTitleDisplayMode(.large)
+            }
+            .tabItem {
+                Label("Places", systemImage: "rectangle.stack")
+            }
+            NavigationView {
+                SettingsView()
+                    .navigationTitle("Settings")
+                    .navigationBarTitleDisplayMode(.large)
+            }
+            .tabItem {
+                Label("Settings", systemImage: "gear")
+            }
         }
     }
 

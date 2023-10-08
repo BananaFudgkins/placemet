@@ -13,7 +13,7 @@ struct PlacesView: View {
     @StateObject var locManager = LocationManager()
     
     var body: some View {
-        NavigationView {
+        VStack {
             switch locManager.locationManager.authorizationStatus {
             case .authorizedWhenInUse:
                 CardStack(direction: LeftRight.direction, data: businesses) { card, direction in
@@ -44,8 +44,6 @@ struct PlacesView: View {
                 fetchBusinesses()
             }
         })
-        .navigationBarTitleDisplayMode(.large)
-        .navigationTitle(Text("Places"))
     }
     
     private func fetchBusinesses() {
