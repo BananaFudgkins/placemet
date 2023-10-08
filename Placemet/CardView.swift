@@ -33,9 +33,11 @@ struct CardView: View {
                     }
                     Spacer()
                     if let distance = business.distance {
-                        Text("\(round(distance * 10) / 10) meters away")
-                            .font(.footnote)
-                            .foregroundColor(.secondary)
+                        if let intDist = Int(exactly: distance.rounded()) {
+                            Text(intDist == 1 ? "1 meter away" : "\(intDist) meters away")
+                                .font(.footnote)
+                                .foregroundColor(.secondary)
+                        }
                     }
                 }
                 .padding()

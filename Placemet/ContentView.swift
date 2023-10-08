@@ -24,7 +24,7 @@ struct ContentView: View {
                     .navigationBarTitleDisplayMode(.large)
             }
             .tabItem {
-                Label("Places", systemImage: "rectangle.stack")
+                Label("Places", systemImage: "square.stack")
             }
             NavigationView {
                 SettingsView()
