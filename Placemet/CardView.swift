@@ -11,6 +11,8 @@ import SDWebImageSwiftUI
 struct CardView: View {
     let business: Business
     
+    // Use the business details endpoint to get the star rating.
+    
     var body: some View {
         GeometryReader { geo in
             VStack {
