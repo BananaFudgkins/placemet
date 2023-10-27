@@ -15,6 +15,7 @@ struct Coordinates: Codable {
 struct Business: Identifiable {
     var id: String?
     var name: String?
+    var rating: Float?
     var price: String?
     var is_closed: Bool?
     var distance: Double?
