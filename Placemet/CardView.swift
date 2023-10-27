@@ -11,7 +11,7 @@ import SDWebImageSwiftUI
 struct CardView: View {
     let business: Business
     
-    // Use the business details endpoint to get the star rating.
+    @State var rating: Float?
     
     var body: some View {
         GeometryReader { geo in
@@ -43,11 +43,47 @@ struct CardView: View {
                     }
                 }
                 .padding()
+                if let rating = rating {
+                    Text("Rating: \(rating)")
+                }
             }
             .background(Color(uiColor: .systemBackground))
             .cornerRadius(12)
             .shadow(radius: 4)
             .padding(.horizontal, 15)
+            .onAppear {
+                getBizDetails()
+            }
+        }
+    }
+    
+    private func getBizDetails() {
+        guard let bizID = business.id else { return }
+        
+        let urlString = "https://api.yelp.com/v3/businesses/\(bizID)"
+        
+        guard let url = URL(string: urlString) else { fatalError("Invalid URL") }
+        
+        var request = URLRequest(url: url)
+        request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { data, resp, error in
+            if let error = error {
+                print("Error getting biz details: \(error.localizedDescription)")
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data)
+                
+                guard let resp = json as? NSDictionary else { return }
+                
+                rating = resp.value(forKey: "rating") as? Float
+            } catch {
+                print("Whoopsie! \(error.localizedDescription)")
+            }
         }
     }
 }

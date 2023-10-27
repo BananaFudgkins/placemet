@@ -7,14 +7,13 @@
 
 import Foundation
 
-class YLPClient: ObservableObject {
+class YLPClient {
+    static let shared = YLPClient()
+    
     func searchForBusinesses(coordinates: Coordinates, completion: @escaping ([Business]?, Error?) -> Void) {
-        let requestURL = "https://api.yelp.com/v3/businesses/search?latitude=\(coordinates.latitude)&longitude=\(coordinates.longitude)&sort_by=distance"
+        let urlString = "https://api.yelp.com/v3/businesses/search?latitude=\(coordinates.latitude)&longitude=\(coordinates.longitude)&sort_by=distance"
         
-        guard let url = URL(string: requestURL) else {
-            print("Invalid URL")
-            return
-        }
+        guard let url = URL(string: urlString) else { fatalError("Invalid URL") }
         
         var request = URLRequest(url: url)
         request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
@@ -58,7 +57,7 @@ class YLPClient: ObservableObject {
                 
                 completion(fetchedBusinesses, nil)
             } catch {
-                print("Whoopsie!")
+                print("Whoopsie! \(error.localizedDescription)" )
                 completion(nil, error)
             }
         }

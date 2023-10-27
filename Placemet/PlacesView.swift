@@ -49,7 +49,7 @@ struct PlacesView: View {
     private func fetchBusinesses() {
         guard let userLoc = locManager.locationManager.location else { return }
         
-        YLPClient().searchForBusinesses(coordinates: Coordinates(latitude: userLoc.coordinate.latitude, longitude: userLoc.coordinate.longitude)) { bizes, error in
+        YLPClient.shared.searchForBusinesses(coordinates: Coordinates(latitude: userLoc.coordinate.latitude, longitude: userLoc.coordinate.longitude)) { bizes, error in
             if let error = error {
                 print("Error fetching businesses: \(error.localizedDescription)")
                 return
