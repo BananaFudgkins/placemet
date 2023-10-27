@@ -43,8 +43,20 @@ struct CardView: View {
                 }
                 .padding()
                 if let rating = business.rating {
-                    let rounded = round(rating * 10) / 10.0
-                    Text("\(rounded)")
+                    HStack {
+                        if let intRating = Int(exactly: rating.rounded()) {
+                            ForEach(1..<intRating + 1) { number in
+                                Image(systemName: "star.fill")
+                            }
+                        }
+                        
+                        if rating.truncatingRemainder(dividingBy: 0.5) == 0.0 {
+                            Image(systemName: "star.leadinghalf.fill")
+                        }
+                    }
+                }
+                if let price = business.price {
+                    Text("\(price)")
                 }
             }
             .background(Color(uiColor: .systemBackground))
